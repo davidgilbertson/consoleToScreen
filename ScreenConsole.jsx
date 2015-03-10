@@ -4,8 +4,7 @@
 
 'use strict';
 
-var React = require('react/addons'),
-    _ = require('underscore'),
+var React = require('react'),
     options = {
         show: 'always',
         windowErrors: true,
@@ -66,8 +65,6 @@ var ScreenConsole = React.createClass({
     },
 
     overrideConsoleLog: function() {
-        // if (!_.has(window, 'console')) { return; }
-
         var originalConsole = console.log;
         var self = this;
 
@@ -100,14 +97,12 @@ var ScreenConsole = React.createClass({
     },
 
     render: function() {
-        /* jshint ignore:start */
         return (
             <div style={style}>
                 Console ready...
                 <div ref="logBody"></div>
             </div>
         );
-        /* jshint ignore:end */
     }
 
 });
